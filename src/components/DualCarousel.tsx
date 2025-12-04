@@ -24,11 +24,13 @@ export const DualCarousel = () => {
   });
 
   // ANIMATION LOGIC:
-  // Start values > 100vh ensure they are initially off-screen (below)
-  // End values < -100vh ensure they scroll fully up and out
-  // The 'Right' set starts later (140vh vs 100vh) to create the staggered "Left first" effect
-  const yLeft = useTransform(scrollYProgress, [0, 1], ["100vh", "-150vh"]);
-  const yRight = useTransform(scrollYProgress, [0, 1], ["160vh", "-150vh"]);
+  // - We increase the container height to 450vh to allow for a long, smooth scroll.
+  // - We use a large gap (60vh) between images in the same column.
+  // - The Right column starts significantly lower (145vh vs 100vh).
+  // - This creates the "Zipper" effect: Left 1 appears -> Right 1 appears -> Left 2 appears.
+  
+  const yLeft = useTransform(scrollYProgress, [0, 1], ["100vh", "-350vh"]);
+  const yRight = useTransform(scrollYProgress, [0, 1], ["145vh", "-305vh"]);
 
   return (
     <>
@@ -58,44 +60,52 @@ export const DualCarousel = () => {
           ========================================= */}
       <section 
         ref={targetRef} 
-        className="hidden lg:block h-[300vh] relative bg-warm-white"
+        className="hidden lg:block h-[450vh] relative bg-warm-white"
       >
         <div className="sticky top-0 h-screen w-full overflow-hidden flex justify-center items-center">
           
           {/* CENTRAL TEXT BLOCK (Fixed) */}
-          <div className="relative z-0 text-center max-w-2xl px-6">
+          <div className="relative z-0 text-center max-w-xl px-6">
             <h2 className="font-serif text-[3.5rem] text-charcoal mb-8 leading-[1.15]">
-              Rajasthan's most unique <br /> safari experience.
+              Rajasthan's most authentic and immersive <br /> wildlife  experience.
             </h2>
-            <p className="font-sans text-lg text-gray-600 font-light leading-loose max-w-xl mx-auto">
-              Framed by granite hills and the ancient Aravalli mountain range, Jawai Wildframe is defined by the magical intermingling of wildlife and rural village life that has coexisted peacefully for centuries. Encounters with wildlife are punctuated by engagements with local communities and a deep immersion into the local culture.
+            <p className="font-sans text-lg text-gray-600 font-light leading-loose mx-auto">
+              Shaped by Jawai’s timeless granite landscapes, Jawai Wildframe reveals a world where leopards roam freely, birds fill the skies, and rural communities coexist peacefully with the wild. Each journey blends authentic encounters with a deep sense of place and culture.
             </p>
           </div>
 
-          {/* LEFT IMAGE STACK */}
+          {/* LEFT IMAGE STACK 
+              - Width reduced to 18vw (smaller)
+              - Left spacing increased to 5% (space from border)
+              - Gap increased to 60vh (space between images for alternating effect)
+          */}
           <motion.div 
             style={{ y: yLeft }}
-            className="absolute left-0 top-0 w-[28vw] flex flex-col gap-[20vh] z-10 pointer-events-none"
+            className="absolute left-[5%] top-0 w-[18vw] flex flex-col gap-[60vh] z-10 pointer-events-none"
           >
             {leftImages.map((img, idx) => (
               <div 
                 key={`left-${idx}`} 
-                className="w-full aspect-[4/5] overflow-hidden"
+                className="w-full aspect-[3/4] overflow-hidden"
               >
                 <img src={img.src} alt={img.alt} className="w-full h-full object-cover" />
               </div>
             ))}
           </motion.div>
 
-          {/* RIGHT IMAGE STACK */}
+          {/* RIGHT IMAGE STACK 
+              - Width reduced to 18vw
+              - Right spacing increased to 5%
+              - Gap increased to 60vh
+          */}
           <motion.div 
             style={{ y: yRight }}
-            className="absolute right-0 top-0 w-[28vw] flex flex-col gap-[20vh] z-10 pointer-events-none"
+            className="absolute right-[5%] top-0 w-[18vw] flex flex-col gap-[60vh] z-10 pointer-events-none"
           >
             {rightImages.map((img, idx) => (
               <div 
                 key={`right-${idx}`} 
-                className="w-full aspect-[4/5] overflow-hidden"
+                className="w-full aspect-[3/4] overflow-hidden"
               >
                 <img src={img.src} alt={img.alt} className="w-full h-full object-cover" />
               </div>

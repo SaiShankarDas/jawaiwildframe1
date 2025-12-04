@@ -23,33 +23,45 @@ export const DualCarousel = () => {
     offset: ["start start", "end end"]
   });
 
-  // ANIMATION LOGIC:
-  // - We increase the container height to 450vh to allow for a long, smooth scroll.
-  // - We use a large gap (60vh) between images in the same column.
-  // - The Right column starts significantly lower (145vh vs 100vh).
-  // - This creates the "Zipper" effect: Left 1 appears -> Right 1 appears -> Left 2 appears.
-  
+  // ANIMATION LOGIC (Desktop):
   const yLeft = useTransform(scrollYProgress, [0, 1], ["100vh", "-350vh"]);
   const yRight = useTransform(scrollYProgress, [0, 1], ["145vh", "-305vh"]);
+
+  // Combine images for the mobile carousel
+  const allImages = [...leftImages, ...rightImages];
 
   return (
     <>
       {/* =========================================
-          MOBILE / TABLET VIEW (Standard Layout)
+          MOBILE / TABLET VIEW (Horizontal Carousel)
           ========================================= */}
-      <div className="lg:hidden bg-warm-white py-20 px-6">
-        <div className="text-center mb-16">
-          <h2 className="font-serif text-4xl text-charcoal mb-6 leading-tight">
-            Rajasthan's most unique <br /> safari experience.
+      <div className="lg:hidden bg-warm-white py-20">
+        <div className="container mx-auto px-6 text-center mb-12">
+          <h2 className="font-serif text-3xl md:text-4xl text-charcoal mb-6 leading-tight">
+            Rajasthan's most authentic and immersive <br /> wildlife  experience.
           </h2>
-          <p className="font-sans text-gray-600 font-light leading-relaxed">
-            Framed by granite hills and the ancient Aravalli mountain range, Jawai Wildframe is defined by the magical intermingling of wildlife and rural village life.
+          <p className="font-sans text-gray-600 font-light leading-relaxed text-sm md:text-base">
+            Shaped by Jawai’s timeless granite landscapes, Jawai Wildframe reveals a world where leopards roam freely, birds fill the skies, and rural communities coexist peacefully with the wild. Each journey blends authentic encounters with a deep sense of place and culture.
           </p>
         </div>
-        <div className="space-y-12">
-          {[...leftImages, ...rightImages].map((img, idx) => (
-            <div key={idx} className="w-full">
-              <img src={img.src} alt={img.alt} className="w-full h-auto object-cover aspect-[4/5]" />
+
+        {/* Horizontal Scroll Container */}
+        <div className="flex overflow-x-auto snap-x snap-mandatory gap-6 px-6 pb-8 w-full scrollbar-hide">
+          {allImages.map((img, idx) => (
+            <div 
+              key={idx} 
+              className="flex-shrink-0 w-[85vw] md:w-[50vw] snap-center"
+            >
+              <div className="overflow-hidden rounded-sm">
+                <img 
+                  src={img.src} 
+                  alt={img.alt} 
+                  className="w-full h-auto object-cover aspect-[3/4]" 
+                />
+              </div>
+              <p className="mt-4 text-xs uppercase tracking-widest text-charcoal/60 text-center">
+                {img.alt}
+              </p>
             </div>
           ))}
         </div>
@@ -74,11 +86,7 @@ export const DualCarousel = () => {
             </p>
           </div>
 
-          {/* LEFT IMAGE STACK 
-              - Width reduced to 18vw (smaller)
-              - Left spacing increased to 5% (space from border)
-              - Gap increased to 60vh (space between images for alternating effect)
-          */}
+          {/* LEFT IMAGE STACK */}
           <motion.div 
             style={{ y: yLeft }}
             className="absolute left-[5%] top-0 w-[25vw] flex flex-col gap-[60vh] z-10 pointer-events-none"
@@ -93,11 +101,7 @@ export const DualCarousel = () => {
             ))}
           </motion.div>
 
-          {/* RIGHT IMAGE STACK 
-              - Width reduced to 18vw
-              - Right spacing increased to 5%
-              - Gap increased to 60vh
-          */}
+          {/* RIGHT IMAGE STACK */}
           <motion.div 
             style={{ y: yRight }}
             className="absolute right-[5%] top-0 w-[25vw] flex flex-col gap-[60vh] z-10 pointer-events-none"

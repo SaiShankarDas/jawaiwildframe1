@@ -81,12 +81,12 @@ export const DualCarousel = () => {
           */}
           <motion.div 
             style={{ y: yLeft }}
-            className="absolute left-[5%] top-0 w-[18vw] flex flex-col gap-[60vh] z-10 pointer-events-none"
+            className="absolute left-[5%] top-0 w-[25vw] flex flex-col gap-[60vh] z-10 pointer-events-none"
           >
             {leftImages.map((img, idx) => (
               <div 
                 key={`left-${idx}`} 
-                className="w-full aspect-[3/4] overflow-hidden"
+                className="w-full aspect-[3/3.036] overflow-hidden"
               >
                 <img src={img.src} alt={img.alt} className="w-full h-full object-cover" />
               </div>
@@ -100,12 +100,12 @@ export const DualCarousel = () => {
           */}
           <motion.div 
             style={{ y: yRight }}
-            className="absolute right-[5%] top-0 w-[18vw] flex flex-col gap-[60vh] z-10 pointer-events-none"
+            className="absolute right-[5%] top-0 w-[25vw] flex flex-col gap-[60vh] z-10 pointer-events-none"
           >
             {rightImages.map((img, idx) => (
               <div 
                 key={`right-${idx}`} 
-                className="w-full aspect-[3/4] overflow-hidden"
+                className="w-full aspect-[3/3.036] overflow-hidden"
               >
                 <img src={img.src} alt={img.alt} className="w-full h-full object-cover" />
               </div>

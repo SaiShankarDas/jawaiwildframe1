@@ -94,14 +94,14 @@ export const StorySections = () => {
                 className="absolute inset-0 w-full h-full object-cover" 
               />
               
-              {/* Overlay for better text contrast */}
-              <div className="absolute inset-0 bg-black/20" />
-
+              {/* Removed Overlay for clearer, brighter images as per reference */}
+              
               <div className="relative z-10 flex items-center justify-center px-6 w-full">
-                <div className={`max-w-xl w-full rounded-xl shadow-2xl p-10 md:p-14 ${isGreen ? 'bg-forest-green' : 'bg-white'}`}>
+                {/* Reduced padding to p-8 md:p-14 for a tighter, more balanced look */}
+                <div className={`max-w-3xl w-full rounded-2xl shadow-2xl p-8 md:p-14 ${isGreen ? 'bg-forest-green' : 'bg-white'}`}>
                   
                   {/* Label */}
-                  <p className={`text-sm uppercase tracking-wide mb-4 font-bold ${isGreen ? 'text-ivory/70' : 'text-gray-500'}`}>
+                  <p className={`text-xs uppercase tracking-wide mb-4 font-bold ${isGreen ? 'text-ivory/70' : 'text-gray-500'}`}>
                     {story.label}
                   </p>
 

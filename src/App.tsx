@@ -5,15 +5,11 @@ import { Hero } from './components/Hero';
 import { About } from './components/About';
 import { WildernessSafaris } from './components/WildernessSafaris';
 import { DualCarousel } from './components/DualCarousel';
-import { Experiences } from './components/Experiences';
-import { Suites } from './components/Suites';
-import { Conservation } from './components/Conservation';
-import { Gallery } from './components/Gallery';
+import { StorySections } from './components/StorySections';
 import { Dining } from './components/Dining';
 import { Reviews } from './components/Reviews';
 import { Contact } from './components/Contact';
 import { Footer } from './components/Footer';
-import { CardSection } from './components/ui/CardSection';
 import { FloatingWhatsApp } from './components/FloatingWhatsApp';
 
 function App() {
@@ -56,31 +52,17 @@ function App() {
         <WildernessSafaris />
       </div>
 
-      {/* Dual Carousel Section (Restored) */}
+      {/* Dual Carousel Section */}
       <div className="relative z-0 w-full">
         <DualCarousel />
       </div>
 
-      {/* Stacking Cards (Limited to 4 sections) */}
-      <div className="relative w-full">
-        <CardSection id="experiences" index={1} className="bg-white">
-          <Experiences />
-        </CardSection>
-
-        <CardSection id="stays" index={2} className="bg-warm-white">
-          <Suites />
-        </CardSection>
-
-        <CardSection id="conservation" index={3} className="bg-sandstone">
-          <Conservation />
-        </CardSection>
-
-        <CardSection id="gallery" index={4} className="bg-charcoal text-white">
-          <Gallery />
-        </CardSection>
+      {/* Alternating Storytelling Sections (Replaces Stacking Cards) */}
+      <div id="experiences" className="relative z-0 w-full">
+        <StorySections />
       </div>
 
-      {/* Final Normal Scroll Section (Slides over the stack) */}
+      {/* Final Normal Scroll Section */}
       <div className="relative z-50 bg-warm-white shadow-[0_-50px_100px_rgba(0,0,0,0.3)]">
         <div id="dining" className="min-h-[80vh] relative">
           <Dining />

@@ -5,9 +5,10 @@ interface CardSectionProps {
   className?: string;
   id?: string;
   index?: number;
+  noPadding?: boolean;
 }
 
-export const CardSection: React.FC<CardSectionProps> = ({ children, className = '', id, index = 0 }) => {
+export const CardSection: React.FC<CardSectionProps> = ({ children, className = '', id, index = 0, noPadding = false }) => {
   return (
     <div 
       id={id}
@@ -18,8 +19,7 @@ export const CardSection: React.FC<CardSectionProps> = ({ children, className = 
       }}
     >
       <div className="flex-1 w-full h-full overflow-y-auto scrollbar-hide">
-        {/* Removed pb-20 to allow content to reach the bottom edge */}
-        <div className="min-h-full flex flex-col justify-start pt-24">
+        <div className={`min-h-full flex flex-col justify-start ${noPadding ? '' : 'pt-24'}`}>
           {children}
         </div>
       </div>

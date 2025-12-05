@@ -6,6 +6,7 @@ import { About } from './components/About';
 import { WildernessSafaris } from './components/WildernessSafaris';
 import { DualCarousel } from './components/DualCarousel';
 import { StorySections } from './components/StorySections';
+import { Experiences } from './components/Experiences';
 import { Dining } from './components/Dining';
 import { Reviews } from './components/Reviews';
 import { Contact } from './components/Contact';
@@ -58,8 +59,13 @@ function App() {
       </div>
 
       {/* Alternating Storytelling Sections (Replaces Stacking Cards) */}
-      <div id="experiences" className="relative z-0 w-full">
+      <div id="stories" className="relative z-0 w-full">
         <StorySections />
+      </div>
+
+      {/* New Experiences Section */}
+      <div id="experiences" className="relative z-0 w-full">
+        <Experiences />
       </div>
 
       {/* Final Normal Scroll Section */}

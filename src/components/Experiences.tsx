@@ -2,49 +2,50 @@ import React, { useRef } from 'react';
 import { FadeIn } from './ui/Section';
 import { motion } from 'framer-motion';
 import { ArrowRight, ArrowLeft } from 'lucide-react';
+import { ASSETS } from '../data/assets';
 
 const experiences = [
   {
     title: "Jawai Leopard Safari",
     desc: "An exclusive journey through sculpted granite hills, guided by native trackers. Witness leopards in their natural habitat, moving gracefully across the pristine wilderness.",
     price: "₹3,500/-",
-    image: "https://images.unsplash.com/photo-1456926631375-92c8ce872def?auto=format&fit=crop&w=800&q=80"
+    image: ASSETS.experiencesList.leopard
   },
   {
     title: "Prime Safari",
     desc: "A curated wildlife experience tailored for scenic photography. Capture golden-hour moments and immersive sightings across Jawai’s most active viewing zones.",
     price: "₹4,500/-",
-    image: "https://images.unsplash.com/photo-1534759846116-5799c33ce22a?auto=format&fit=crop&w=800&q=80"
+    image: ASSETS.experiencesList.prime
   },
   {
     title: "Premium Safari",
     desc: "Our most elevated experience featuring extended tracking and multi-zone access. Explore remote terrains and dramatic viewpoints for exceptional wildlife encounters.",
     price: "₹5,500/-",
-    image: "https://images.unsplash.com/photo-1516426122078-c23e76319801?auto=format&fit=crop&w=800&q=80"
+    image: ASSETS.experiencesList.premium
   },
   {
     title: "Birds & Crocodile Safari",
     desc: "A serene exploration of the tranquil Jawai Dam. Observe flamingos, pelicans, and marsh crocodiles amidst lush wetlands and calm waters.",
     price: "₹3,000/-",
-    image: "https://images.unsplash.com/photo-1452570053594-1b985d6ea890?auto=format&fit=crop&q=80"
+    image: ASSETS.experiencesList.birds
   },
   {
     title: "Village & Temple Safari",
     desc: "A cultural immersion into Rabari heritage and ancient temples. Discover traditional lifestyles and spiritual narratives shaped by centuries of coexistence.",
     price: "₹4,000/-",
-    image: "https://images.unsplash.com/photo-1564507592333-c60657eea523?auto=format&fit=crop&w=800&q=80"
+    image: ASSETS.experiencesList.village
   },
   {
     title: "Jungle Maad Safari",
     desc: "An evocative journey into the wild Maad forests. Navigate remote trails and rugged terrain in search of elusive predators and authentic wilderness.",
     price: "₹6,000/-",
-    image: "https://images.unsplash.com/photo-1441974231531-c6227db76b6e?auto=format&fit=crop&w=800&q=80"
+    image: ASSETS.experiencesList.jungle
   },
   {
     title: "Wildlife Photography Safari",
     desc: "Designed for photographers, offering flexible tracking and optimal lighting. Capture striking wildlife moments against Jawai’s dramatic granite backdrops.",
     price: "₹5,000/-",
-    image: "https://images.unsplash.com/photo-1554080353-a576cf803bda?auto=format&fit=crop&w=800&q=80"
+    image: ASSETS.experiencesList.photography
   }
 ];
 

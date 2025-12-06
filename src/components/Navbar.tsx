@@ -2,11 +2,11 @@ import React, { useState } from 'react';
 import { Menu, X } from 'lucide-react';
 import { motion, AnimatePresence } from 'framer-motion';
 
-// Updated links to absolute paths so they work from /book
+// Updated links to absolute paths
 const navLinks = [
   { name: 'Home', href: '/#hero' },
   { name: 'Experiences', href: '/#experiences' },
-  { name: 'Gallery', href: '/#gallery' },
+  { name: 'Gallery', href: '/gallery' }, // Updated to point to new page
   { name: 'Safari', href: '/#safari' },
 ];
 

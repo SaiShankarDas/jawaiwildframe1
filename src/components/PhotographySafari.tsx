@@ -1,6 +1,7 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import { Camera } from 'lucide-react';
+import { ASSETS } from '../data/assets';
 
 export const PhotographySafari = () => {
   return (
@@ -50,7 +51,7 @@ export const PhotographySafari = () => {
           className="w-full h-full"
         >
           <img
-            src="https://images.unsplash.com/photo-1554080353-a576cf803bda?auto=format&fit=crop&w=800&q=80"
+            src={ASSETS.photographySafari.main}
             alt="Wildlife Photography Safari"
             className="w-full h-full object-cover"
           />

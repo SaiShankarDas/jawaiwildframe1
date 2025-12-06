@@ -1,5 +1,6 @@
 import React from 'react';
 import { CardSection } from './ui/CardSection';
+import { ASSETS } from '../data/assets';
 
 interface StoryData {
   title: string;
@@ -15,7 +16,7 @@ const stories: StoryData[] = [
     title: "The Land of Leopards & Living Heritage",
     label: "Wilderness",
     // Image 1: Landscape/Nature
-    image: "https://images.unsplash.com/photo-1501785888041-af3ef285b470?auto=format&fit=crop&w=1920&q=80",
+    image: ASSETS.storySections.leopards,
     imageAlt: "Leopard in wildlife",
     text: (
       <p>
@@ -28,7 +29,7 @@ const stories: StoryData[] = [
     title: "Guided by Native Naturalists",
     label: "Expertise",
     // Image 2: Jeep/Safari
-    image: "https://images.unsplash.com/photo-1508672019048-805c876b67e2?auto=format&fit=crop&w=1920&q=80",
+    image: ASSETS.storySections.naturalists,
     imageAlt: "Native Naturalist",
     text: (
       <p>
@@ -41,7 +42,7 @@ const stories: StoryData[] = [
     title: "Signature Jawai Safaris",
     label: "Adventure",
     // Image 3: Landscape
-    image: "https://images.unsplash.com/photo-1470770841072-f978cf4d019e?auto=format&fit=crop&w=1920&q=80",
+    image: ASSETS.storySections.safaris,
     imageAlt: "Jeep Safari",
     text: (
       <>
@@ -59,7 +60,7 @@ const stories: StoryData[] = [
     title: "Stay, Dine & Camp in the Wild Heart of Jawai",
     label: "Hospitality",
     // Image 4: Camping/Night
-    image: "https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?auto=format&fit=crop&w=1920&q=80",
+    image: ASSETS.storySections.stay,
     imageAlt: "Camping in the wild",
     text: (
       <p>

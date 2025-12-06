@@ -12,7 +12,8 @@ export const Gallery = () => {
             <span className="text-desert uppercase tracking-widest text-sm font-bold">Visual Journey</span>
             <h2 className="font-serif text-4xl md:text-7xl mt-4 text-white">Through the Lens</h2>
           </div>
-          <a href="#" className="hidden md:block text-sm uppercase tracking-widest border-b border-white/30 pb-1 text-white hover:text-desert hover:border-desert transition-colors mb-2">
+          {/* Updated Link to /gallery */}
+          <a href="/gallery" className="hidden md:block text-sm uppercase tracking-widest border-b border-white/30 pb-1 text-white hover:text-desert hover:border-desert transition-colors mb-2">
             View All Photos
           </a>
         </div>

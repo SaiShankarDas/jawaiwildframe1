@@ -10,7 +10,8 @@ export const ASSETS = {
   },
   about: {
     safariSilhouette: "/images/shepherd jawai.jpg",
-    luxuryDeck: "/images/jawai 4 (Large).jpg"
+    luxuryDeck: "/images/jawai 4 (Large).jpg",
+    leopardIcon: "https://cdn-icons-png.flaticon.com/512/15707/15707379.png"
   },
   conservation: {
     community: "/images/village walk.jpg",
@@ -26,6 +27,25 @@ export const ASSETS = {
     hillSunrise: "/images/jawai sunrise.jpg",
     bushDinner: "/images/bush.jpg",
     birdWatching: "/images/jawai 7.webp"
+  },
+  // Specific images for the Experiences Carousel
+  experiencesList: {
+    leopard: "https://images.unsplash.com/photo-1456926631375-92c8ce872def?auto=format&fit=crop&w=800&q=80",
+    prime: "https://images.unsplash.com/photo-1534759846116-5799c33ce22a?auto=format&fit=crop&w=800&q=80",
+    premium: "https://images.unsplash.com/photo-1516426122078-c23e76319801?auto=format&fit=crop&w=800&q=80",
+    birds: "https://images.unsplash.com/photo-1452570053594-1b985d6ea890?auto=format&fit=crop&q=80",
+    village: "https://images.unsplash.com/photo-1564507592333-c60657eea523?auto=format&fit=crop&w=800&q=80",
+    jungle: "https://images.unsplash.com/photo-1441974231531-c6227db76b6e?auto=format&fit=crop&w=800&q=80",
+    photography: "https://images.unsplash.com/photo-1554080353-a576cf803bda?auto=format&fit=crop&w=800&q=80"
+  },
+  photographySafari: {
+    main: "https://images.unsplash.com/photo-1554080353-a576cf803bda?auto=format&fit=crop&w=800&q=80"
+  },
+  storySections: {
+    leopards: "https://images.unsplash.com/photo-1501785888041-af3ef285b470?auto=format&fit=crop&w=1920&q=80",
+    naturalists: "https://images.unsplash.com/photo-1508672019048-805c876b67e2?auto=format&fit=crop&w=1920&q=80",
+    safaris: "https://images.unsplash.com/photo-1470770841072-f978cf4d019e?auto=format&fit=crop&w=1920&q=80",
+    stay: "https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?auto=format&fit=crop&w=1920&q=80"
   },
   gallery: [
     { url: "/images/1.jpeg", label: "Jawai Landscapes" },
@@ -44,5 +64,8 @@ export const ASSETS = {
   suites: {
     stoneCottage: "/images/jawai 4 (Large).jpg",
     tentedSuite: "/images/comfort stay.jpg"
+  },
+  placeholders: {
+    imageNotFound: "https://img-wrapper.vercel.app/image?url=https://img-wrapper.vercel.app/image?url=https://placehold.co/800x600/E9E4DA/1a1a1a?text=Image+Not+Found"
   }
 };

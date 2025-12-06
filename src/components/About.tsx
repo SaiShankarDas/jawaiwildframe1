@@ -1,5 +1,6 @@
 import React from 'react';
 import { motion } from 'framer-motion';
+import { ASSETS } from '../data/assets';
 
 export const About = () => {
   return (
@@ -40,7 +41,7 @@ export const About = () => {
           className="w-full flex justify-center"
         >
           <img
-            src="https://cdn-icons-png.flaticon.com/512/15707/15707379.png"
+            src={ASSETS.about.leopardIcon}
             alt="Leopard of Jawai"
             className="w-64 h-64 md:w-80 md:h-80 lg:w-[30rem] lg:h-[30rem] object-contain opacity-80 hover:opacity-100 transition-opacity duration-700 drop-shadow-2xl"
           />

@@ -4,6 +4,7 @@ import Lenis from 'lenis';
 import { Navbar } from './components/Navbar';
 import { Home } from './components/Home';
 import { BookingPage } from './components/BookingPage';
+import { GalleryPage } from './pages/GalleryPage';
 import { FloatingWhatsApp } from './components/FloatingWhatsApp';
 
 // Wrapper to handle Lenis and Scroll Restoration
@@ -52,6 +53,7 @@ const AppContent = () => {
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/book" element={<BookingPage />} />
+        <Route path="/gallery" element={<GalleryPage />} />
       </Routes>
 
       <FloatingWhatsApp />

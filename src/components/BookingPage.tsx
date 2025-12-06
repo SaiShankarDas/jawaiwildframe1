@@ -2,15 +2,29 @@ import React, { useState } from 'react';
 import { motion } from 'framer-motion';
 import { FadeIn } from './ui/Section';
 import { Footer } from './Footer';
-import { MapPin, Calendar, Users, MessageSquare, Phone, User, Mail } from 'lucide-react';
+import { MapPin, Calendar, Users, MessageSquare, User, Mail, Compass } from 'lucide-react';
+import PhoneInput from 'react-phone-number-input';
+import 'react-phone-number-input/style.css';
+
+const safariOptions = [
+  "Jawai Leopard Safari",
+  "Prime Safari",
+  "Premium Safari",
+  "Birds & Crocodile Safari",
+  "Village & Temple Safari",
+  "Jungle Maad Safari",
+  "Wildlife Photography Safari",
+  "Other / Custom Package"
+];
 
 export const BookingPage = () => {
   const [isSubmitted, setIsSubmitted] = useState(false);
+  const [phoneNumber, setPhoneNumber] = useState<string | undefined>();
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
     setIsSubmitted(true);
-    // Here you would typically handle the API call
+    // Here you would typically handle the API call with phoneNumber
   };
 
   return (
@@ -74,16 +88,18 @@ export const BookingPage = () => {
                 </div>
 
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                  {/* WhatsApp */}
+                  {/* WhatsApp Number with Flag Selector */}
                   <div>
                     <label className="block text-xs uppercase tracking-widest text-ivory/60 mb-2 ml-1">WhatsApp Number</label>
                     <div className="relative">
-                      <Phone className="absolute left-4 top-3.5 text-ivory/40" size={18} />
-                      <input 
-                        type="tel" 
-                        required
-                        className="w-full bg-white/5 border border-white/10 rounded-md py-3 pl-12 pr-4 text-ivory placeholder-ivory/30 focus:outline-none focus:border-desert focus:bg-white/10 transition-all duration-300"
-                        placeholder="+91 00000 00000"
+                      <PhoneInput
+                        defaultCountry="IN"
+                        value={phoneNumber}
+                        onChange={setPhoneNumber}
+                        placeholder="Enter phone number"
+                        international
+                        countryCallingCodeEditable={false}
+                        className="w-full" // Wrapper class
                       />
                     </div>
                   </div>
@@ -128,6 +144,31 @@ export const BookingPage = () => {
                         required
                         className="w-full bg-white/5 border border-white/10 rounded-md py-3 pl-12 pr-4 text-ivory placeholder-ivory/30 focus:outline-none focus:border-desert focus:bg-white/10 transition-all duration-300 [color-scheme:dark]"
                       />
+                    </div>
+                  </div>
+                </div>
+
+                {/* Safari Options */}
+                <div>
+                  <label className="block text-xs uppercase tracking-widest text-ivory/60 mb-2 ml-1">Preferred Experience</label>
+                  <div className="relative">
+                    <Compass className="absolute left-4 top-3.5 text-ivory/40" size={18} />
+                    <select 
+                      className="w-full bg-white/5 border border-white/10 rounded-md py-3 pl-12 pr-4 text-ivory placeholder-ivory/30 focus:outline-none focus:border-desert focus:bg-white/10 transition-all duration-300 appearance-none"
+                      defaultValue=""
+                    >
+                      <option value="" disabled className="bg-forest-green text-ivory/50">Select an experience...</option>
+                      {safariOptions.map((option, index) => (
+                        <option key={index} value={option} className="bg-forest-green text-ivory">
+                          {option}
+                        </option>
+                      ))}
+                    </select>
+                    {/* Custom Arrow */}
+                    <div className="absolute right-4 top-4 pointer-events-none">
+                      <svg className="w-4 h-4 text-ivory/40" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
+                      </svg>
                     </div>
                   </div>
                 </div>

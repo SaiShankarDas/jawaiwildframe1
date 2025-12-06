@@ -63,7 +63,7 @@ export const Hero = () => {
           </p>
           
           <div className="flex flex-col md:flex-row gap-6 justify-center">
-            <a href="#contact" className="px-10 py-4 border border-white bg-white/5 backdrop-blur-sm hover:bg-white hover:text-charcoal transition-all duration-500 uppercase tracking-widest text-xs font-bold">
+            <a href="/book" className="px-10 py-4 border border-white bg-white/5 backdrop-blur-sm hover:bg-white hover:text-charcoal transition-all duration-500 uppercase tracking-widest text-xs font-bold">
               Book Your Stay
             </a>
             <a href="#safari" className="px-10 py-4 border border-white hover:bg-white hover:text-charcoal transition-all duration-500 uppercase tracking-widest text-xs font-bold">

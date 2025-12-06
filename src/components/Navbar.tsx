@@ -2,11 +2,12 @@ import React, { useState } from 'react';
 import { Menu, X } from 'lucide-react';
 import { motion, AnimatePresence } from 'framer-motion';
 
+// Updated links to absolute paths so they work from /book
 const navLinks = [
-  { name: 'Home', href: '#hero' },
-  { name: 'Experiences', href: '#experiences' },
-  { name: 'Gallery', href: '#gallery' },
-  { name: 'Safari', href: '#safari' },
+  { name: 'Home', href: '/#hero' },
+  { name: 'Experiences', href: '/#experiences' },
+  { name: 'Gallery', href: '/#gallery' },
+  { name: 'Safari', href: '/#safari' },
 ];
 
 export const Navbar = () => {
@@ -17,7 +18,7 @@ export const Navbar = () => {
       {/* Increased z-index to z-[100] to ensure it stays above the z-50 footer section */}
       <nav className="fixed top-0 left-0 w-full z-[100] bg-warm-white shadow-md py-4 transition-all duration-300">
         <div className="container mx-auto px-6 md:px-12 flex justify-between items-center">
-          <a href="#" className="font-serif text-2xl tracking-widest font-bold uppercase text-charcoal">
+          <a href="/" className="font-serif text-2xl tracking-widest font-bold uppercase text-charcoal">
             Jawai Wildframe
           </a>
 
@@ -33,7 +34,7 @@ export const Navbar = () => {
               </a>
             ))}
             <a
-              href="#contact"
+              href="/book"
               className="px-6 py-2 border border-charcoal text-charcoal hover:bg-charcoal hover:text-white transition-all duration-300 uppercase text-xs tracking-widest font-bold"
             >
               Book Now
@@ -75,7 +76,7 @@ export const Navbar = () => {
               </a>
             ))}
             <a
-              href="#contact"
+              href="/book"
               onClick={() => setIsMobileMenuOpen(false)}
               className="px-8 py-3 border border-charcoal text-charcoal hover:bg-charcoal hover:text-white uppercase tracking-widest transition-all"
             >

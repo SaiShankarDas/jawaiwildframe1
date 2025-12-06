@@ -4,12 +4,9 @@ import { motion, AnimatePresence } from 'framer-motion';
 
 const navLinks = [
   { name: 'Home', href: '#hero' },
-  { name: 'Stays', href: '#stays' },
   { name: 'Experiences', href: '#experiences' },
   { name: 'Gallery', href: '#gallery' },
-  // Dining link removed
   { name: 'Safari', href: '#safari' },
-  { name: 'Conservation', href: '#conservation' },
 ];
 
 export const Navbar = () => {

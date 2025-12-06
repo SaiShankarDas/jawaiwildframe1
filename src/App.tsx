@@ -13,6 +13,7 @@ import { Reviews } from './components/Reviews';
 import { Contact } from './components/Contact';
 import { Footer } from './components/Footer';
 import { FloatingWhatsApp } from './components/FloatingWhatsApp';
+import { Gallery } from './components/Gallery';
 
 function App() {
   useEffect(() => {
@@ -85,6 +86,11 @@ function App() {
 
         <div id="reviews" className="bg-white py-20">
           <Reviews />
+        </div>
+
+        {/* Visual Journey / Gallery Section */}
+        <div id="gallery" className="h-screen w-full">
+          <Gallery />
         </div>
 
         <div id="contact" className="bg-sandstone/20 py-20">

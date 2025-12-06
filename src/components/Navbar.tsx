@@ -17,7 +17,8 @@ export const Navbar = () => {
 
   return (
     <>
-      <nav className="fixed top-0 left-0 w-full z-50 bg-warm-white shadow-md py-4 transition-all duration-300">
+      {/* Increased z-index to z-[100] to ensure it stays above the z-50 footer section */}
+      <nav className="fixed top-0 left-0 w-full z-[100] bg-warm-white shadow-md py-4 transition-all duration-300">
         <div className="container mx-auto px-6 md:px-12 flex justify-between items-center">
           <a href="#" className="font-serif text-2xl tracking-widest font-bold uppercase text-charcoal">
             Jawai Wildframe
@@ -64,7 +65,7 @@ export const Navbar = () => {
             animate={{ opacity: 1, x: 0 }}
             exit={{ opacity: 0, x: '100%' }}
             transition={{ type: 'tween', duration: 0.4 }}
-            className="fixed inset-0 z-40 bg-warm-white flex flex-col items-center justify-center space-y-8"
+            className="fixed inset-0 z-[90] bg-warm-white flex flex-col items-center justify-center space-y-8"
           >
             {navLinks.map((link) => (
               <a

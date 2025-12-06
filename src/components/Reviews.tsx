@@ -12,8 +12,8 @@ export const Reviews = () => {
             "An experience that transcends the ordinary. The connection with nature, the impeccable hospitality, and the sheer beauty of Jawai left us speechless. Truly a wild paradise."
           </h3>
           <div className="flex flex-col items-center">
-            <span className="uppercase tracking-widest font-bold text-base text-charcoal">Sarah & James Mitchell</span>
-            <span className="text-gray-500 text-sm mt-2 uppercase tracking-wider">London, UK</span>
+            <span className="uppercase tracking-widest font-bold text-base text-charcoal">Balveer Singh Mewar</span>
+            <span className="text-gray-500 text-sm mt-2 uppercase tracking-wider">Founder of Jawai Wildframe</span>
           </div>
         </FadeIn>
       </div>

@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
 import { FadeIn } from './ui/Section';
 import { Footer } from './Footer';
@@ -27,13 +27,25 @@ export const BookingPage = () => {
     // Here you would typically handle the API call with phoneNumber
   };
 
+  // Auto-dismiss success message after 10 seconds
+  useEffect(() => {
+    let timer: NodeJS.Timeout;
+    if (isSubmitted) {
+      timer = setTimeout(() => {
+        setIsSubmitted(false);
+      }, 10000);
+    }
+    return () => clearTimeout(timer);
+  }, [isSubmitted]);
+
   return (
     <div className="min-h-screen bg-forest-green text-ivory font-sans selection:bg-desert selection:text-white flex flex-col">
       
       {/* Spacer for Fixed Navbar */}
       <div className="h-24 md:h-32"></div>
 
-      <div className="flex-grow container mx-auto px-6 md:px-12 lg:px-20 py-12 md:py-20">
+      {/* Reduced top padding (pt-6 md:pt-10) to decrease gap between header and title */}
+      <div className="flex-grow container mx-auto px-6 md:px-12 lg:px-20 pt-6 md:pt-10 pb-12 md:pb-20">
         
         {/* Page Header */}
         <div className="text-center mb-16 md:mb-24">
@@ -47,10 +59,10 @@ export const BookingPage = () => {
           </FadeIn>
         </div>
 
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 lg:gap-24 items-start">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 lg:gap-24 items-stretch">
           
           {/* LEFT COLUMN: Booking Form */}
-          <FadeIn delay={0.2} className="w-full">
+          <FadeIn delay={0.2} className="w-full flex flex-col">
             <h2 className="font-serif text-3xl md:text-4xl text-ivory mb-8 border-b border-desert/30 pb-4 inline-block">
               Booking Details
             </h2>
@@ -72,7 +84,7 @@ export const BookingPage = () => {
                 </p>
               </motion.div>
             ) : (
-              <form onSubmit={handleSubmit} className="space-y-6">
+              <form onSubmit={handleSubmit} className="space-y-6 flex-grow flex flex-col">
                 {/* Name */}
                 <div className="relative">
                   <label className="block text-xs uppercase tracking-widest text-ivory/60 mb-2 ml-1">Name</label>
@@ -134,9 +146,9 @@ export const BookingPage = () => {
                     </div>
                   </div>
 
-                  {/* Travel Dates */}
+                  {/* Travel Date (Renamed from Travel Dates) */}
                   <div>
-                    <label className="block text-xs uppercase tracking-widest text-ivory/60 mb-2 ml-1">Travel Dates</label>
+                    <label className="block text-xs uppercase tracking-widest text-ivory/60 mb-2 ml-1">Travel Date</label>
                     <div className="relative">
                       <Calendar className="absolute left-4 top-3.5 text-ivory/40" size={18} />
                       <input 
@@ -174,13 +186,13 @@ export const BookingPage = () => {
                 </div>
 
                 {/* Message */}
-                <div>
+                <div className="flex-grow">
                   <label className="block text-xs uppercase tracking-widest text-ivory/60 mb-2 ml-1">Message / Special Requests</label>
-                  <div className="relative">
+                  <div className="relative h-full">
                     <MessageSquare className="absolute left-4 top-3.5 text-ivory/40" size={18} />
                     <textarea 
                       rows={4}
-                      className="w-full bg-white/5 border border-white/10 rounded-md py-3 pl-12 pr-4 text-ivory placeholder-ivory/30 focus:outline-none focus:border-desert focus:bg-white/10 transition-all duration-300 resize-none"
+                      className="w-full h-full min-h-[120px] bg-white/5 border border-white/10 rounded-md py-3 pl-12 pr-4 text-ivory placeholder-ivory/30 focus:outline-none focus:border-desert focus:bg-white/10 transition-all duration-300 resize-none"
                       placeholder="Tell us about your preferences..."
                     ></textarea>
                   </div>
@@ -189,7 +201,7 @@ export const BookingPage = () => {
                 {/* Submit Button */}
                 <button 
                   type="submit" 
-                  className="w-full bg-gradient-to-r from-desert to-[#d4b98c] text-charcoal font-bold uppercase tracking-widest py-4 rounded-md hover:scale-[1.02] transition-transform duration-300 shadow-lg"
+                  className="w-full bg-gradient-to-r from-desert to-[#d4b98c] text-charcoal font-bold uppercase tracking-widest py-4 rounded-md hover:scale-[1.02] transition-transform duration-300 shadow-lg mt-6"
                 >
                   Submit Booking Request
                 </button>
@@ -203,8 +215,8 @@ export const BookingPage = () => {
               Location
             </h2>
 
-            <div className="flex-grow">
-              <div className="w-full aspect-video md:aspect-square lg:aspect-[4/3] rounded-lg border-4 border-white/10 shadow-2xl overflow-hidden relative group">
+            <div className="flex-grow flex flex-col">
+              <div className="w-full flex-grow rounded-lg border-4 border-white/10 shadow-2xl overflow-hidden relative group min-h-[300px]">
                 <iframe 
                   src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3617.618688624645!2d73.0649!3d25.1289!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3942eb4900000001%3A0x1234567890abcdef!2sJawai%20Bandh%2C%20Rajasthan!5e0!3m2!1sen!2sin!4v1625000000000!5m2!1sen!2sin" 
                   width="100%" 
@@ -225,15 +237,13 @@ export const BookingPage = () => {
                 </div>
               </div>
 
-              <div className="mt-8 space-y-4 text-ivory/80 font-light">
+              {/* Aligned to bottom using mt-auto */}
+              <div className="mt-auto pt-8 space-y-4 text-ivory/80 font-light">
                  <p>
                    <strong className="text-desert font-bold uppercase text-xs tracking-widest block mb-1">Getting Here</strong>
                    Jawai is well connected by road from Udaipur (3 hrs) and Jodhpur (3 hrs). The nearest railway station is Falna (30 mins).
                  </p>
-                 <p>
-                   <strong className="text-desert font-bold uppercase text-xs tracking-widest block mb-1">Coordinates</strong>
-                   25.1289° N, 73.0649° E
-                 </p>
+                 {/* Coordinates removed as requested */}
               </div>
             </div>
           </FadeIn>

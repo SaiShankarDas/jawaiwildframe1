@@ -2601,7 +2601,7 @@ reusify@^1.0.4:
   resolved "https://registry.yarnpkg.com/reusify/-/reusify-1.1.0.tgz#0fe13b9522e1473f51b558ee796e08f11f9b489f"
   integrity sha512-g6QUff04oZpHs0eG5p83rFLhHeV00ug/Yf9nZM6fLeUrPguBTkTQOdpAWWspMh55TZfVQDPaN3NQJfbVRAxdIw==
 
-rollup@^4.34.9:
+rollup@^4.34.0, rollup@^4.34.9:
   version "4.53.3"
   resolved "https://registry.yarnpkg.com/rollup/-/rollup-4.53.3.tgz#dbc8cd8743b38710019fb8297e8d7a76e3faa406"
   integrity sha512-w8GmOxZfBmKknvdXU1sdM9NHcoQejwF/4mNgj2JuEEdRaHwwF12K7e9eXn1nLZ07ad+du76mkVsyeb2rKGllsA==

@@ -53,13 +53,13 @@ export const Experiences = () => {
 
   const scrollLeft = () => {
     if (scrollContainerRef.current) {
-      scrollContainerRef.current.scrollBy({ left: -400, behavior: 'smooth' });
+      scrollContainerRef.current.scrollBy({ left: -300, behavior: 'smooth' });
     }
   };
 
   const scrollRight = () => {
     if (scrollContainerRef.current) {
-      scrollContainerRef.current.scrollBy({ left: 400, behavior: 'smooth' });
+      scrollContainerRef.current.scrollBy({ left: 300, behavior: 'smooth' });
     }
   };
 
@@ -128,18 +128,18 @@ export const Experiences = () => {
         <div className="w-6 flex-shrink-0" />
       </div>
 
-      {/* Navigation Buttons (Desktop) */}
-      <div className="hidden md:flex justify-center gap-4 mt-4">
+      {/* Navigation Buttons (Visible on all devices) */}
+      <div className="flex justify-center gap-4 mt-8">
         <button 
           onClick={scrollLeft} 
-          className="p-3 rounded-full border border-charcoal/20 hover:bg-charcoal hover:text-white transition-all duration-300"
+          className="p-3 rounded-full border border-charcoal/20 hover:bg-charcoal hover:text-white transition-all duration-300 active:scale-95"
           aria-label="Scroll Left"
         >
           <ArrowLeft size={20} />
         </button>
         <button 
           onClick={scrollRight} 
-          className="p-3 rounded-full border border-charcoal/20 hover:bg-charcoal hover:text-white transition-all duration-300"
+          className="p-3 rounded-full border border-charcoal/20 hover:bg-charcoal hover:text-white transition-all duration-300 active:scale-95"
           aria-label="Scroll Right"
         >
           <ArrowRight size={20} />

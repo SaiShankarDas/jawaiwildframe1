@@ -7,7 +7,8 @@ import { WildernessSafaris } from './components/WildernessSafaris';
 import { DualCarousel } from './components/DualCarousel';
 import { StorySections } from './components/StorySections';
 import { Experiences } from './components/Experiences';
-import { Dining } from './components/Dining';
+import { PhotographySafari } from './components/PhotographySafari';
+import { GuestInformation } from './components/GuestInformation';
 import { Reviews } from './components/Reviews';
 import { Contact } from './components/Contact';
 import { Footer } from './components/Footer';
@@ -68,11 +69,19 @@ function App() {
         <Experiences />
       </div>
 
+      {/* Photography Safari Section */}
+      <div className="relative z-0 w-full">
+        <PhotographySafari />
+      </div>
+
+      {/* Guest Information Section */}
+      <div className="relative z-0 w-full bg-warm-white">
+        <GuestInformation />
+      </div>
+
       {/* Final Normal Scroll Section */}
       <div className="relative z-50 bg-warm-white shadow-[0_-50px_100px_rgba(0,0,0,0.3)]">
-        <div id="dining" className="min-h-[80vh] relative">
-          <Dining />
-        </div>
+        {/* Dining Section Removed */}
 
         <div id="reviews" className="bg-white py-20">
           <Reviews />

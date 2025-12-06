@@ -7,7 +7,7 @@ const navLinks = [
   { name: 'Stays', href: '#stays' },
   { name: 'Experiences', href: '#experiences' },
   { name: 'Gallery', href: '#gallery' },
-  { name: 'Dining', href: '#dining' },
+  // Dining link removed
   { name: 'Safari', href: '#safari' },
   { name: 'Conservation', href: '#conservation' },
 ];
